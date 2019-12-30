@@ -44,6 +44,4 @@ abstract class BaseFragment : Fragment() {
         }
     }
 
-    inline fun <reified T: Activity> Fragment.startActivity(vararg params: Pair<String, Any?>) =
-            Helper.internalStartActivity(activity!!, T::class.java, params)
 }
