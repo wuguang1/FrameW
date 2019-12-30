@@ -1,4 +1,4 @@
-package com.wug.test.util
+package com.wug.framew.net
 
 interface HttpResultSubscriberListener {
     fun onSuccess(data: String?, method: String)

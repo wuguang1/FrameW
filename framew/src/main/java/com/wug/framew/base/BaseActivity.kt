@@ -7,7 +7,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.wug.framew.util.Helper
 import com.wug.framew.util.Helper.internalStartActivity
 import com.wug.framew.util.Helper.internalStartActivityForResult
 import com.wug.framew.util.Helper.internalStartService

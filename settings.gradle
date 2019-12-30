@@ -1,2 +1,2 @@
-include ':app'
-rootProject.name='FrameW'
+include ':framew'
+//rootProject.name='FrameW'

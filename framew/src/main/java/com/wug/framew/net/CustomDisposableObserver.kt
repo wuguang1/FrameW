@@ -1,12 +1,7 @@
-package com.wug.test.util
+package com.wug.framew.net
 
 import android.app.ProgressDialog
-import android.util.Log
-import com.google.gson.Gson
 import io.reactivex.observers.DisposableObserver
-import java.net.ConnectException
-import java.net.SocketTimeoutException
-import java.util.concurrent.TimeoutException
 
 
 class CustomDisposableObserver<T>(
