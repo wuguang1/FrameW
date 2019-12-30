@@ -18,6 +18,20 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.1.0'
+    //RxJava
+    implementation 'io.reactivex.rxjava2:rxjava:2.x.y'
+    //RxAndroid
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    //retrofit依赖Gson
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    //OkHttp
+    implementation 'com.squareup.okhttp3:okhttp:4.2.2'
+    //retrofit依赖RxJava
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    //配合Rxjava 使用
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
 }
 repositories {
     mavenCentral()

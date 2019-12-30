@@ -1,12 +1,14 @@
-package com.example.learnkotlin.base
+package com.wug.framew.base
 
 import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import android.widget.Toast.makeText
 import androidx.fragment.app.Fragment
-import com.wug.framew.util.Helper
+import com.wug.framew.util.Helper.internalStartActivity
 
 abstract class BaseFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +17,7 @@ abstract class BaseFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         return initView()
     }
@@ -28,10 +30,10 @@ abstract class BaseFragment : Fragment() {
         loadData()
     }
 
-    fun loadData() {
+   open fun loadData() {
     }
 
-    fun initListener() {
+   open fun initListener() {
 
     }
 
@@ -40,7 +42,8 @@ abstract class BaseFragment : Fragment() {
     }
 
     fun mToast(msg: String) {
-        activity?.runOnUiThread() {
+        activity?.runOnUiThread {
+            makeText(context, msg, Toast.LENGTH_SHORT).show()
         }
     }
 

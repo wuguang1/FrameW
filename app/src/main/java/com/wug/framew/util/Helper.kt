@@ -6,11 +6,25 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcelable
 import androidx.core.os.bundleOf
-import java.io.Serializable
+import androidx.fragment.app.Fragment
 
 object Helper {
+    inline fun <reified T : Activity> Context.wStartActivity(vararg params: Pair<String, Any?>) =
+            internalStartActivity(this, T::class.java, params)
+
+    inline fun <reified T : Activity> Activity.wStartActivityForResult(requestCode: Int, vararg params: Pair<String, Any?>) =
+            internalStartActivityForResult(this, T::class.java, requestCode, params)
+
+    inline fun <reified T : Service> Context.wStartService(vararg params: Pair<String, Any?>) =
+            internalStartService(this, T::class.java, params)
+
+    inline fun <reified T : Service> Context.wStopService(vararg params: Pair<String, Any?>) =
+            internalStopService(this, T::class.java, params)
+
+    inline fun <reified T : Activity> Fragment.wStartActivity(vararg params: Pair<String, Any?>) =
+            internalStartActivity(activity!!, T::class.java, params)
+
     fun internalStartService(
             ctx: Context,
             service: Class<out Service>,
@@ -43,4 +57,14 @@ object Helper {
         return intent
     }
 
+    fun <T> Intent.get(key: String): T? {
+        try {
+            val extras = InterFieldMethod.mExtras.get(this) as Bundle
+            InterFieldMethod.unparcel.invoke(extras)
+            val map = InterFieldMethod.mMap.get(extras) as Map<String, Any>
+            return map[key] as T
+        } catch (e: Exception) {
+        }
+        return null
+    }
 }

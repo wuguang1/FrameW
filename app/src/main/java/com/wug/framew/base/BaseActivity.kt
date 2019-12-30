@@ -42,16 +42,4 @@ abstract class BaseActivity : AppCompatActivity() {
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
         }
     }
-
-    inline fun <reified T : Activity> Context.startActivity(vararg params: Pair<String, Any?>) =
-            internalStartActivity(this, T::class.java, params)
-
-    inline fun <reified T : Activity> Activity.startActivityForResult(requestCode: Int, vararg params: Pair<String, Any?>) =
-            internalStartActivityForResult(this, T::class.java, requestCode, params)
-
-    inline fun <reified T : Service> Context.startService(vararg params: Pair<String, Any?>) =
-            internalStartService(this, T::class.java, params)
-
-    inline fun <reified T : Service> Context.stopService(vararg params: Pair<String, Any?>) =
-            internalStopService(this, T::class.java, params)
 }
