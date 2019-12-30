@@ -10,6 +10,5 @@ class MainActivity : BaseActivity() {
 
     override fun initView() {
         Toast.makeText(context, "", Toast.LENGTH_SHORT)
-        startActivity<BaseActivity>("1" to 1, "2" to 2)
     }
 }
