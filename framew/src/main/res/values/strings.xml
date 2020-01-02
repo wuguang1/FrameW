@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FrameW</string>
+    <string name="loading">加载中,请稍后…</string>
+    <string name="net_error">无可用网络，请检查网络连接</string>
 </resources>
