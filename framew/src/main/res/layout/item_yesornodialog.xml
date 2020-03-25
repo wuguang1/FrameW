@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#00000000"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/YesOrNo_relativeLayout"
+        android:layout_width="@dimen/dp_224"
+        android:layout_height="@dimen/dp_112"
+        android:background="@drawable/shape_white_radius">
+
+        <TextView
+            android:id="@+id/tv_YesOrNo_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_22"
+            android:gravity="center"
+            android:maxLines="2"
+            tools:text="ssss"
+            android:textColor="#ff303030"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_YesOrNo_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dp_29"
+            android:layout_marginBottom="@dimen/dp_17"
+            android:background="@drawable/shape_tran_radius_sokrn"
+            android:gravity="center"
+            android:paddingStart="@dimen/dp_20"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingEnd="@dimen/dp_20"
+            android:paddingBottom="@dimen/dp_5"
+            android:text="取消"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_YesOrNo_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/dp_22"
+            android:layout_marginBottom="@dimen/dp_17"
+            android:background="@drawable/shape_green_radius_sokrn"
+            android:gravity="center"
+            android:paddingStart="@dimen/dp_20"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingEnd="@dimen/dp_20"
+            android:paddingBottom="@dimen/dp_5"
+            android:text="确定"
+            android:textColor="#fff8feff"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+</LinearLayout>
+
