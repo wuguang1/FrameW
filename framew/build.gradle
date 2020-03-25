@@ -11,11 +11,14 @@ android {
         minSdkVersion 19
         targetSdkVersion 29
     }
+    kotlinOptions {
+        jvmTarget = 1.8
+    }
 }
 
 dependencies {
-//    implementation fileTree(dir: 'libs', include: ['*.jar'])
-//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     api 'androidx.appcompat:appcompat:1.1.0'
     api 'androidx.core:core-ktx:1.1.0'
     api 'androidx.constraintlayout:constraintlayout:1.1.3'
