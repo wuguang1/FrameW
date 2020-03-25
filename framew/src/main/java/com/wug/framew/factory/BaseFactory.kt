@@ -1,12 +1,10 @@
 package com.wug.framew.factory
 
 import android.app.Activity
-import android.app.ProgressDialog
 import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
 import android.widget.Toast
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
@@ -14,15 +12,10 @@ import com.google.gson.Gson
 import com.google.gson.JsonParser
 import com.wug.framew.R
 import com.wug.framew.base.FBaseApplication
-import com.wug.framew.net.CustomDisposableObserver
-import com.wug.framew.net.HttpResult
 import com.wug.framew.util.Helper
 import com.wug.framew.util.InterFieldMethod
 import com.wug.framew.util.ThreadUtil
-import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
-import java.util.ArrayList
+import java.util.*
 
 inline fun <reified T : Activity> Context.wStartActivity(vararg params: Pair<String, Any?>) =
     Helper.internalStartActivity(this, T::class.java, params)
