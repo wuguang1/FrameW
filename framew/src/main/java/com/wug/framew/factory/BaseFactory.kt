@@ -8,7 +8,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Toast
+import androidx.core.content.edit
 import androidx.fragment.app.Fragment
+import com.google.gson.Gson
+import com.google.gson.JsonParser
 import com.wug.framew.R
 import com.wug.framew.base.FBaseApplication
 import com.wug.framew.net.CustomDisposableObserver
@@ -19,6 +22,7 @@ import com.wug.framew.util.ThreadUtil
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import java.util.ArrayList
 
 inline fun <reified T : Activity> Context.wStartActivity(vararg params: Pair<String, Any?>) =
     Helper.internalStartActivity(this, T::class.java, params)
@@ -50,8 +54,57 @@ fun <T> Intent.get(key: String): T? {
 }
 
 fun mToast(msg: String) {
-    if (!TextUtils.isEmpty(msg))
+    if (msg.isNotEmpty())
         ThreadUtil.runOnMainThread(Runnable {
             Toast.makeText(FBaseApplication.getContext(), msg, Toast.LENGTH_SHORT).show()
         })
+}
+
+fun <T> data2Model(data: String?, mclass: Class<T>): T? {
+    return Gson().fromJson(data, mclass)
+}
+
+fun <T> data2List(json: String?, cls: Class<T>): List<T> {
+    val list = ArrayList<T>()
+    try {
+        val array = JsonParser().parse(json).asJsonArray
+        for (element in array) {
+            list.add(Gson().fromJson(element, cls))
+        }
+    } catch (e: Exception) {
+        e.printStackTrace()
+    }
+
+    return list
+}
+
+fun putShareP(context: Context, key: String, value: String) {
+    val sp = context.getSharedPreferences(
+        context.getString(
+            R.string.app_name
+        ), Context.MODE_PRIVATE
+    )
+    sp.edit {
+        putString(key, value)
+    }
+}
+
+fun putShareP(context: Context, key: String, value: Int) {
+    val sp = context.getSharedPreferences(
+        context.getString(
+            R.string.app_name
+        ), Context.MODE_PRIVATE
+    )
+    sp.edit {
+        putInt(key, value)
+    }
+}
+
+fun getShareP(context: Context, key: String): String? {
+    val sp = context.getSharedPreferences(
+        context.getString(
+            R.string.app_name
+        ), Context.MODE_PRIVATE
+    )
+    return sp.getString(key, "")
 }
