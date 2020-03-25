@@ -3,9 +3,6 @@ package com.wug.framew.base
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.wug.framew.net.HttpResultSubscriberListener
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 
 
 abstract class FBaseActivity : AppCompatActivity(), HttpResultSubscriberListener {

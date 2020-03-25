@@ -1,7 +1,6 @@
 package com.wug.framew.net
 
 import android.app.ProgressDialog
-import android.content.Context
 import android.util.Log
 import com.google.gson.Gson
 import com.wug.framew.factory.mToast

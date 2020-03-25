@@ -4,7 +4,6 @@ import android.app.Dialog
 import android.content.Context
 import android.view.View
 import com.wug.framew.R
-import kotlinx.android.synthetic.main.item_yesornodialog.*
 import kotlinx.android.synthetic.main.item_yesornodialog.tv_YesOrNo_info
 import kotlinx.android.synthetic.main.item_yesornodialog.tv_YesOrNo_left
 import kotlinx.android.synthetic.main.item_yesornodialog.tv_YesOrNo_right

@@ -2,15 +2,12 @@ package com.wug.framew.base
 
 import android.graphics.Color
 import android.os.Bundle
-import android.os.Message
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.wug.framew.net.HttpResultSubscriberListener
-import com.wug.framew.util.handle.Frame
-import com.wug.framew.util.handle.MHandler
 
 
 abstract class FBaseFragment : Fragment(), HttpResultSubscriberListener {
