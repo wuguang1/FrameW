@@ -11,9 +11,6 @@ android {
         minSdkVersion 19
         targetSdkVersion 29
     }
-    kotlinOptions {
-        jvmTarget = 1.8
-    }
 }
 
 dependencies {
