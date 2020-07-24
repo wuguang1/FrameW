@@ -5,6 +5,7 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
@@ -100,4 +101,28 @@ fun getShareP(context: Context, key: String): String? {
         ), Context.MODE_PRIVATE
     )
     return sp.getString(key, "")
+}
+
+fun <T> Any?.notNull(f: () -> T, t: () -> T): T {
+    return if (this != null) f() else t()
+}
+
+fun Context.dp2px(dp: Int): Int {
+    val scale = resources.displayMetrics.density
+    return (dp * scale + 0.5f).toInt()
+}
+
+fun Context.px2dp(px: Int): Int {
+    val scale = resources.displayMetrics.density
+    return (px / scale + 0.5f).toInt()
+}
+
+fun View.dp2px(dp: Int): Int {
+    val scale = resources.displayMetrics.density
+    return (dp * scale + 0.5f).toInt()
+}
+
+fun View.px2dp(px: Int): Int {
+    val scale = resources.displayMetrics.density
+    return (px / scale + 0.5f).toInt()
 }
