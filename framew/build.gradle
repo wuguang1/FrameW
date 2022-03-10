@@ -36,7 +36,7 @@ dependencies {
     //retrofit依赖Gson
     api 'com.squareup.retrofit2:converter-gson:2.6.1'
     //OkHttp
-    api 'com.squareup.okhttp3:okhttp:4.9.3'
+    api 'com.squareup.okhttp3:okhttp:4.2.2'
     //retrofit依赖RxJava
     api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     //配合Rxjava 使用
