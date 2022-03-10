@@ -11,8 +11,8 @@ public interface Logger {
 
     Logger DEFAULT = new Logger() {
         @Override
-        public void log(int level, String tag, String message) {
-            Platform.get().log(level, message, null);
+        public void log(int level, String tag, String msg) {
+            Platform.get().log(msg,level, null);
         }
     };
 }
