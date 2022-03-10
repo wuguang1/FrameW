@@ -12,7 +12,7 @@ public interface Logger {
     Logger DEFAULT = new Logger() {
         @Override
         public void log(int level, String tag, String msg) {
-            Platform.get().log(msg,level, null);
+            Platform.get().log(msg, level, null);
         }
     };
 }
