@@ -20,7 +20,6 @@ class CustomDisposableObserver<T>(
     override fun onComplete() {
         Log.d("net", " --> onCompleted")
     }
-
     override fun onNext(t: HttpResult<T>) {
         Log.d("net", " --> onNext --->${t.msg}")
         if (t.code == "0") {
@@ -35,7 +34,6 @@ class CustomDisposableObserver<T>(
                 mToast(t.msg)
         }
     }
-
     override fun onError(e: Throwable) {
         var code = -1000
         var msg: String? = e.message
