@@ -12,10 +12,10 @@ import java.util.concurrent.TimeoutException
 
 
 class CustomDisposableObserver<T>(
-    var l: HttpResultSubscriberListener,
-    var mProgressDialog: ProgressDialog,
-    var method: String,
-    var isShow: Boolean
+        var l: HttpResultSubscriberListener,
+        var mProgressDialog: ProgressDialog,
+        var method: String,
+        var isShow: Boolean
 ) : DisposableObserver<HttpResult<T>>() {
     override fun onComplete() {
         Log.d("net", " --> onCompleted")
@@ -40,8 +40,8 @@ class CustomDisposableObserver<T>(
         var code = -1000
         var msg: String? = e.message
         if (e is ConnectException
-            || e is SocketTimeoutException
-            || e is TimeoutException
+                || e is SocketTimeoutException
+                || e is TimeoutException
         ) {
             code = -9999
             msg = "connect time out"
